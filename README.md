@@ -78,7 +78,7 @@ Hanzi to Kana Converter は、Web ページ上の漢字を可能な場合は派�
 ## インストール方法
 
 1. ブラウザに [Tampermonkey](https://www.tampermonkey.net/) 拡張機能をインストールしていない場合は、まずインストールしてください。
-2. [スクリプト ソース コード](hanziToKana.user.js) を開き、`raw` ボタンをクリックします。
+2. [スクリプト ソース コード](hanziToKana.user.js) を開き、`Raw` ボタンをクリックします。
 3. Tampermonkey によってインストール ページが自動的に表示されます。
 4. [インストール] ボタンをクリックしてスクリプトをインストールします。
 
