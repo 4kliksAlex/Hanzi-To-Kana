@@ -1,3 +1,5 @@
+![](https://upload.wikimedia.org/wikipedia/commons/f/fc/FlowRoot_alternate.png)
+
 # 漢字到衍生假名轉換器
 
 ## 描述
