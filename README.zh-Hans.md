@@ -19,6 +19,6 @@ Hanzi to Kana Converter 是一个可以用衍生的日文假名（如果有）�
 
 您可以修改脚本中的映射对应以新增、删除或变更转换。映射储存在以下`object`中：`tchineseHiragana`、`tchineseKatakana`、`schineseHiragana`、`schineseKatakana`。
 
-## 限制
+## 注意
 
-该脚本并非旨在将万叶假名转换。
+该脚本并非旨在转换万叶假名。

@@ -1,4 +1,4 @@
-# Hanzi to Kana Converter
+# Hanzi to derived Kana Converter
 
 ## Description
 
