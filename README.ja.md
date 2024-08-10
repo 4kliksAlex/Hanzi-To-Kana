@@ -1,4 +1,4 @@
-# Hanzi to Kana Converter
+# 漢字から派生仮名への変換
 
 ## 概要
 

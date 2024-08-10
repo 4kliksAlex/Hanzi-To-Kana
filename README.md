@@ -61,7 +61,7 @@ Feel free to fork this project and submit pull requests with improvements.
 
 This script is provided as-is, without any guarantees.
 
-# 日本語版
+# 漢字から派生仮名への変換
 
 ## 概要
 
