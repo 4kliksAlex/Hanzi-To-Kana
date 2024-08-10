@@ -9,6 +9,8 @@
 // @description  Replace Hanzis on web pages with the derived Kanas of them.
 // @version      0.1.1
 // @description  Replace Hanzis on web pages with the derived Kanas of them.
+// @version      0.1.1
+// @description  Replace Hanzis on web pages with the derived Kanas of them.
 // @author       4kliksAlex
 // @match        *://*/*
 // @icon         https://raw.githubusercontent.com/4kliksAlex/Hanzi-To-Kana/main/icon.png
