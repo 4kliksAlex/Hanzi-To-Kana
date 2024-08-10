@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         汉字到衍生假名转换器 漢字から派生仮名への変換 Hanzi to derived Kana Converter
 // @name:en      Hanzi to derived Kana Converter
-// @name:zh-CN 漢字到衍生假名轉換器
-// @name:zh-TW 汉字到衍生假名转换器
+// @name:zh-CN   漢字到衍生假名轉換器
+// @name:zh-TW   汉字到衍生假名转换器
 // @name:ja      漢字から派生仮名への変換
 // @namespace    https://4kliksAlex.github.com/
+// @version      0.1.1
+// @description  Replace Hanzis on web pages with the derived Kanas of them.
 // @version      0.1.1
 // @description  Replace Hanzis on web pages with the derived Kanas of them.
 // @author       4kliksAlex
