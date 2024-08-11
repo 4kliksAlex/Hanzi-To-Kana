@@ -1,12 +1,13 @@
 // ==UserScript==
-// @name         汉字到衍生假名转换器 漢字から派生仮名への変換 Hanzi to derived Kana Converter
+// @name         汉字到衍生假名转换器 | 漢字から派生仮名への変換 | Hanzi to derived Kana Converter
 // @name:en      Hanzi to derived Kana Converter
 // @name:zh-TW   漢字到衍生假名轉換器
 // @name:zh-CN   汉字到衍生假名转换器
 // @name:ja      漢字から派生仮名への変換
 // @namespace    https://4kliksAlex.github.com/
 // @version      0.1.1
-// @description       Replace Hanzis on web pages with the derived Kanas of them.
+// @description:      将网页上的汉字替换为其对应的派生假名 | ウェブページ上の漢字を、それに対応する派生仮名に置き換えます | Replace Hanzis on web pages with the derived Kanas of them.
+// @description:en    Replace Hanzis on web pages with the derived Kanas of them.
 // @description:zh-TW 將網頁上的漢字替換為其對應的派生假名。
 // @description:zh-CN 将网页上的汉字替换为其对应的派生假名。
 // @description:ja    ウェブページ上の漢字を、それに対応する派生仮名に置き換えます。
@@ -21,7 +22,7 @@
     'use strict';
     const tchineseHiragana = {
       "安": "あ", "以": "い", "宇": "う", "衣": "え", "於": "お",
-      "加": "か", "幾": "き", "久": "く", "計": "け", "己": "こ",
+      "加": "か", "幾": "き", "久": "く", "計": "け", "己": "こ", "機": "き",
       "左": "さ", "之": "し", "寸": "す", "世": "せ", "曽": "そ",
       "太": "た", "知": "ち", "川": "つ", "天": "て", "止": "と",
       "奈": "な", "仁": "に", "奴": "ぬ", "祢": "ね", "乃": "の",
@@ -34,7 +35,7 @@
     };
     const tchineseKatakana = {
       "阿": "ア", "伊": "イ", "宇": "ウ", "江": "エ", "於": "オ",
-      "加": "カ", "幾": "キ", "久": "ク", "介": "ケ", "己": "コ",
+      "加": "カ", "幾": "キ", "久": "ク", "介": "ケ", "己": "コ", "機": "キ",
       "散": "サ", "之": "シ", "須": "ス", "世": "セ", "曽": "ソ",
       "多": "タ", "千": "チ", "川": "ツ", "天": "テ", "止": "ト",
       "奈": "ナ", "二": "ニ", "奴": "ヌ", "祢": "ネ", "乃": "ノ",
@@ -47,7 +48,7 @@
     };
     const schineseHiragana = {
       "安": "あ", "以": "い", "宇": "う", "衣": "え", "于": "お",
-      "加": "か", "几": "き", "久": "く", "计": "け", "己": "こ",
+      "加": "か", "几": "き", "久": "く", "计": "け", "己": "こ", "机": "き",
       "左": "さ", "之": "し", "寸": "す", "世": "せ", "曽": "そ",
       "太": "た", "知": "ち", "川": "つ", "天": "て", "止": "と",
       "奈": "な", "仁": "に", "奴": "ぬ", "祢": "ね", "乃": "の",
@@ -60,7 +61,7 @@
     };
     const schineseKatakana = {
       "阿": "ア", "伊": "イ", "宇": "ウ", "江": "エ", "于": "オ",
-      "加": "カ", "几": "キ", "久": "ク", "介": "ケ", "己": "コ",
+      "加": "カ", "几": "キ", "久": "ク", "介": "ケ", "己": "コ", "机": "キ",
       "散": "サ", "之": "シ", "须": "ス", "世": "セ", "曽": "ソ",
       "多": "タ", "千": "チ", "川": "ツ", "天": "テ", "止": "ト",
       "奈": "ナ", "二": "ニ", "奴": "ヌ", "祢": "ネ", "乃": "ノ",
@@ -71,15 +72,25 @@
       "和": "ワ", "乎": "ヲ",
       "尔": "ン"
     };
-    const hanziToKanaMap = new Map([
-      ...Object.entries(tchineseKatakana),
-      ...Object.entries(tchineseHiragana),
-      ...Object.entries(schineseKatakana),
-      ...Object.entries(schineseHiragana),
-    ]);
+
+    const hanziToHiraganaMap = new Map(Object.entries({
+      ...tchineseHiragana,
+      ...schineseHiragana,
+    }));
+
+    const hanziToKatakanaMap = new Map(Object.entries({
+      ...tchineseKatakana,
+      ...schineseKatakana,
+    }));
+
+    function getKanaForHanzi(char) {
+      const hiragana = hanziToHiraganaMap.get(char) || char;
+      const katakana = hanziToKatakanaMap.get(char) ? `[${hanziToKatakanaMap.get(char)}]` : '';
+      return `${hiragana}${katakana}`;
+    }
 
     function replaceHanziWithKana(text) {
-      return text.split('').map(char => hanziToKanaMap.get(char) || char).join('');
+      return Array.from(text).map(getKanaForHanzi).join('');
     }
 
     function traverseAndReplace(node) {
