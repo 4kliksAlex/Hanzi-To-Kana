@@ -4,7 +4,7 @@
 
 ## 描述
 
-Hanzi to Kana Converter 是一個可以用衍生的日文假名（如果有）中文漢字的 Tampermonkey 腳本。它支援繁體和簡體中文漢字，並保留頁面的原始佈局和樣式。
+Hanzi to Kana Converter 是一個可以將中文漢字替換爲衍生假名（如果有）的 Tampermonkey 腳本。它支援繁體和簡體中文漢字，並保留頁面的原始佈局和樣式。
 
 ## 如何安裝
 
