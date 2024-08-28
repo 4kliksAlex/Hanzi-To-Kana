@@ -1,4 +1,4 @@
-![](https://upload.wikimedia.org/wikipedia/commons/f/fc/FlowRoot_alternate.png)
+![](https://upload.wikimedia.org/wikipedia/commons/f/ff/FlowRoot3824.svg)
 
 # 漢字到衍生假名轉換器
 
