@@ -40,7 +40,7 @@
       "多": "タ", "千": "チ", "川": "ツ", "天": "テ", "止": "ト",
       "奈": "ナ", "二": "ニ", "奴": "ヌ", "祢": "ネ", "乃": "ノ",
       "八": "ハ", "比": "ヒ", "不": "フ", "部": "ヘ", "保": "ホ",
-      "万": "マ", "三": "ミ", "牟": "ム", "女": "メ", "毛": "モ",
+      "末": "マ", "三": "ミ", "牟": "ム", "女": "メ", "毛": "モ", "万": "マ",  //「マ」の字形: 「末」の上の部分と「万」の混合
       "也": "ヤ", "由": "ユ", "与": "ヨ",
       "良": "ラ", "利": "リ", "流": "ル", "礼": "レ", "呂": "ロ",
       "和": "ワ", "乎": "ヲ",
@@ -66,7 +66,7 @@
       "多": "タ", "千": "チ", "川": "ツ", "天": "テ", "止": "ト",
       "奈": "ナ", "二": "ニ", "奴": "ヌ", "祢": "ネ", "乃": "ノ",
       "八": "ハ", "比": "ヒ", "不": "フ", "部": "ヘ", "保": "ホ",
-      "万": "マ", "三": "ミ", "牟": "ム", "女": "メ", "毛": "モ",
+      "末": "マ", "三": "ミ", "牟": "ム", "女": "メ", "毛": "モ", "万": "マ", //「マ」の字形: 「末」の上の部分と「万」の混合
       "也": "ヤ", "由": "ユ", "与": "ヨ",
       "良": "ラ", "利": "リ", "流": "ル", "礼": "レ", "吕": "ロ",
       "和": "ワ", "乎": "ヲ",
@@ -84,9 +84,10 @@
     }));
 
     function getKanaForHanzi(char) {
-      const hiragana = hanziToHiraganaMap.get(char);
-      const katakana = hiragana ? `[${hanziToKatakanaMap.get(char)}]` : hanziToKatakanaMap.get(char);
-      return hiragana || katakana ? `${hiragana}${katakana}` : char;
+      const hiragana = hanziToHiraganaMap.get(char) || '';
+      let katakana = hanziToKatakanaMap.get(char) || '';
+      katakana = hiragana.length !== 0 && katakana.length !== 0 ? `[${katakana}]` : katakana;
+      return hiragana.length !== 0 || katakana.length !== 0 ? `${hiragana}${katakana}` : char;
     }
 
     function replaceHanziWithKana(text) {
