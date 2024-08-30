@@ -86,7 +86,10 @@
     function getKanaForHanzi(char) {
       const hiragana = hanziToHiraganaMap.get(char) || '';
       let katakana = hanziToKatakanaMap.get(char) || '';
-      katakana = hiragana.length !== 0 && katakana.length !== 0 ? `[${katakana}]` : katakana;
+      // katakana = hiragana.length !== 0 && katakana.length !== 0 ? `[${katakana}]` : katakana;
+      if (hiragana.length !== 0 && katakana.length !== 0) {
+        return Math.random() < 0.5 ? hiragana : katakana;
+      }
       return hiragana.length !== 0 || katakana.length !== 0 ? `${hiragana}${katakana}` : char;
     }
 
