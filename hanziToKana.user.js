@@ -5,7 +5,7 @@
 // @name:zh-CN   汉字到衍生假名转换器
 // @name:ja      漢字から派生仮名への変換
 // @namespace    https://4kliksAlex.github.com/
-// @version      0.2.0
+// @version      0.3.0
 // @description:      将网页上的汉字替换为其对应的派生假名 | ウェブページ上の漢字を、それに対応する派生仮名に置き換えます | Replace Hanzis on web pages with the derived Kanas of them.
 // @description:en    Replace Hanzis on web pages with the derived Kanas of them.
 // @description:zh-TW 將網頁上的漢字替換為其對應的派生假名。
