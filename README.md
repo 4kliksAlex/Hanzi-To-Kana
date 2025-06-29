@@ -1,5 +1,32 @@
 ![](https://upload.wikimedia.org/wikipedia/commons/f/ff/FlowRoot3824.svg)
 
+![](https://upload.wikimedia.org/wikipedia/commons/f/ff/FlowRoot3824.svg)
+
+# 汉字到衍生假名转换器
+
+## 描述
+
+Hanzi to Kana Converter 是一个可以将中文汉字替换为衍生假名（如果有）的 Tampermonkey 脚本。它支持繁体和简体中文汉字，并保留页面的原始布局和样式。
+
+## 如何安装
+
+1. 如果您的浏览器尚未安装[Tampermonkey](https://www.tampermonkey.net/)扩展程序，请先安装。
+2. 开启[脚本源代码](hanziToKana.user.js)，点选`raw`按钮。
+3. Tampermonkey 会自动显示安装页面。
+4. 点选“安装”按钮安装脚本。
+
+## 用法
+
+安装并开启后，该脚本将自动在网页上执行。
+
+## 自定义
+
+您可以修改脚本中的对应关系以新增、删除或变更转换。映射储存在以下`object`中：`tchineseHiragana`、`tchineseKatakana`、`schineseHiragana`、`schineseKatakana`。
+
+## 限制
+
+该脚本并非旨在转换万叶假名。
+
 # 漢字到衍生假名轉換器
 
 ## 描述
